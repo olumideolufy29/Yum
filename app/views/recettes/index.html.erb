@@ -59,6 +59,7 @@
    <ol id="container_grille">
     <% @recettes.each do |recette| %>
     <li class="mix dessert <%= recette.id %>" data-tags="vanille cheesecake">
+      <%= link_to(recette) do %>
       <div class="card small">
         <div class="big-image">
          <%= image_tag(recette.image.url()) %>
@@ -92,6 +93,7 @@
             </li>
         </ul>
       </div>
+      <% end %>
     </li>
     <% end %>
     </section>
