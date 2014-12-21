@@ -1,0 +1,185 @@
+/*Mobile Portrait -----------*/
+
+@media screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  .home ol#container_grille {
+    li {
+      width: 100%;
+    }
+
+  }
+  body.recette {
+    .container {
+      flex-direction: column;
+      .infos {
+        .titre {
+          padding: 50px 0;
+          h2 {
+            color: #fff;
+            font-size: 32px;
+            font-family: "Gotham Book";
+          }
+          q {
+            color: #fff;
+            font-size: 26px;
+            font-family: "Gotham Book";
+          }
+
+        }
+        #overflow-avis {
+          overflow-x: scroll;
+          -webkit-overflow-scrolling: touch;
+          padding-left: 35px;
+          padding-bottom: 20px;
+          .liste-avis {
+            font-size: 0;
+            li {
+              display: inline-block;
+              margin: 0 20px 0 0;
+              font-size: 16px;
+              vertical-align: bottom;
+              p {
+                max-height: 185px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: auto;
+              }
+            }
+          }
+
+        }
+        section {
+          .personnes {
+            button {
+              line-height: 35px;
+              padding: 4px 14px 5px;
+            }
+            span {
+              line-height: 35px;
+              padding: 4px 14px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+/* Mobile Landscape -----------*/
+
+@media screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
+  .home ol#container_grille {
+    li {
+      width: 50%;
+    }
+
+  }
+  body.recette {
+    flex-direction: column;
+    .infos {
+      section {
+        #overflow-avis {
+          overflow-x: scroll;
+          -webkit-overflow-scrolling: touch;
+          padding-left: 35px;
+          .liste-avis {
+            font-size: 0;
+            li {
+              display: inline-block;
+              margin: 0 10px;
+              font-size: 16px;
+              p {
+                max-height: 185px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: auto;
+              }
+            }
+          }
+        }
+
+      }
+      section {
+        .personnes {
+          button {
+            line-height: 35px;
+            padding: 4px 14px 5px;
+          }
+          span {
+            line-height: 35px;
+            padding: 4px 14px 5px;
+          }
+        }
+      }
+    }
+  }
+
+}
+/*Tablet Portrait -----------*/
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .home ol#container_grille {
+    li {
+      width: 33.333%;
+    }
+
+  }
+  body.recette {
+    flex-direction: column;
+    .infos {
+      section {
+        #overflow-avis {
+          overflow-x: scroll;
+          -webkit-overflow-scrolling: touch;
+          padding-left: 35px;
+          .liste-avis {
+            font-size: 0;
+            li {
+              display: inline-block;
+              margin: 0 10px;
+              font-size: 16px;
+              p {
+                max-height: 185px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: auto;
+              }
+            }
+          }
+        }
+
+      }
+      section {
+        .personnes {
+          button {
+            line-height: 35px;
+            padding: 4px 14px 5px;
+          }
+          span {
+            line-height: 35px;
+            padding: 4px 14px 5px;
+          }
+        }
+      }
+    }
+  }
+
+}
+/* Tablet Landscape -----------*/
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .home ol#container_grille {
+    li {
+      width: 25%;
+    }
+
+  }
+  body.recette {
+    .container {
+      .infos {
+        section {
+          & > * {
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+  }
+}

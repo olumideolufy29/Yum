@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Verala';
+  src: url("verala/varelaround-regular-webfont.eot?#iefix") format('embedded-opentype'), url("verala/varelaround-regular-webfont.woff2") format('woff2'), url("verala/varelaround-regular-webfont.woff") format('woff'), url("verala/varelaround-regular-webfont.ttf") format('truetype'), url("verala/varelaround-regular-webfont.svg#varela_roundregular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'icomoon';
+  src: font-url('icomoon/icomoon.eot?#iefix') format('embedded-opentype'), font-url('icomoon/icomoon.svg#icomoon') format('svg'), font-url('icomoon/icomoon.woff') format('woff'), font-url('icomoon/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+.icon-favs:before {
+  content: "\e600";
+  font-size: 20px;
+  color: $default_picto;
+}
+.icon-time:before {
+  content: "\e601";
+  font-size: 22px;
+  color: $default_picto;
+}
+.icon-views:before {
+  content: "\e602";
+  font-size: 24px;
+  color: $default_picto;
+
+}
+@font-face {
+  font-family: 'Baskerville';
+  src: url("baskerville/Baskerville.eot");
+  /* Safari, Android, iOS */
+  /* Modern Browsers */
+  /* IE6-IE8 */
+  /* IE9 Compat Modes */
+  src: url("baskerville/Baskerville.eot?#iefix") format('embedded-opentype'),url('baskerville/Baskerville.woff') format('woff'),url('baskerville/Baskerville.ttf') format('truetype'),url('baskerville/Baskerville.svg#69fe73d36b3a62fcdf5267236ee0e4c6') format('svg');
+  /* Legacy iOS */
+
+  font-style: normal;
+  font-weight: 400;
+}

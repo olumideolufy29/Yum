@@ -1,0 +1,258 @@
+// Place all the styles related to the recettes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home {
+  background: $background;
+  header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    text-align: right;
+    .header-popup {
+      position: fixed;
+      z-index: 8;
+      display: none;
+      width: 160px;
+      margin-top: 10px;
+      border-radius: 8px;
+      background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.75) 100%);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+      &.search-popup {
+        right: 10px;
+        min-width: 136px;
+        height: 22px;
+        padding: 18px;
+        transition: width 0.3s;
+        #search {
+          min-width: 50px;
+          color: $font-body;
+          border: 0;
+          outline: 0;
+          background: none;
+          font-family: "Verala";
+          font-size: 18px;
+        }
+
+      }
+      &.tags-popup {
+        right: 60px;
+        width: 300px;
+        height: auto;
+        text-align: center;
+        .filter {
+          display: inline-block;
+          margin: 5px;
+          padding: 4px 9px 5px;
+          cursor: pointer;
+          color: #5f656b;
+          border: 2px solid #7a7f85;
+          border-radius: 90px;
+          background-color: rgba(255, 255, 255, 0);
+          text-shadow: none;
+          font-family: "Verala";
+          font-size: 16px;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          &:focus {
+            outline: 0;
+          }
+          &.active {
+            color: $blanc;
+            border: 2px solid $bordure-filtres;
+            background: $bordure-filtres;
+          }
+        }
+
+      }
+      &:after {
+        position: absolute;
+        top: -19px;
+        right: 10px;
+        display: block;
+        width: 42px;
+        height: 19px;
+        content: "";
+        background: url("triangle-popup.svg") 0 0 no-repeat;
+        background-size: 42px 19px;
+      }
+
+    }
+    h1 {
+      float: left;
+      color: $blanc;
+      line-height: 75px;
+    }
+    #tools {
+      height: 75px;
+      margin-right: 30px;
+      vertical-align: top;
+      li {
+        margin-left: 15px;
+        display: inline-block;
+        vertical-align: top;
+        a {
+          display: block;
+          overflow: hidden;
+          width: 30px;
+          height: 75px;
+          white-space: nowrap;
+          text-indent: 100%;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          &#login {
+            text-indent: 0;
+            display: inline-block;
+            width: auto;
+            -webkit-transform: translateZ(0);
+          }
+          &.icon-search {
+            background: url("search.svg") 50% 50% no-repeat;
+            background-size: 30px 30px;
+
+          }
+          &.icon-tags {
+            background: url("tags.svg") 50% 50% no-repeat;
+            background-size: 30px 30px;
+          }
+        }
+      }
+    }
+
+  }
+  #container_grille {
+    padding: 290px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mix {
+    box-sizing: border-box;
+    border: 10px solid transparent;
+    position: relative;
+    display: none;
+    width: 25%;
+    height: auto;
+    list-style: none;
+    .card {
+      transform-origin: 50% 0;
+      transform: translate3d(0, 0, 0);
+      border-radius: 5px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      background-color: #fff;
+      height: auto;
+      z-index: 3;
+      &.big {
+        height: 400px;
+      }
+      &.small {
+        height: 300px;
+      }
+      .no-touch & {
+        &:hover {
+          .big-image {
+            img {
+              transform: translate3d(-50%, -30px, 0);
+              transition: transform 0.3s ease;
+            }
+
+          }
+          .etiquette {
+            transform: translate3d(0, -50%, 0);
+            transition: transform 0.3s ease;
+            & > p {
+              opacity: 1;
+              transition: opacity 0.3s ease;
+            }
+          }
+        }
+
+      }
+      .big-image {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        img {
+          min-height: calc(100% - 104px);
+          max-width: 100%;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all 0.4s cubic-bezier(0.42, 0, 0.57999, 1);
+        }
+
+      }
+      .etiquette {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 104px;
+        background-color: $blanc;
+        transition: all 0.4s cubic-bezier(0.42, 0, 0.57999, 1);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        h2 {
+          width: 100%;
+          display: inline-block;
+          text-decoration: none;
+          color: #3f3f3f;
+          font-family: "Verala";
+          font-size: 24px;
+          padding: 15px 0;
+        }
+        & > p {
+          opacity: 0;
+          font-size: 14px;
+          font-family: "Verala";
+          text-align: justify;
+          padding: 0 15px;
+          color: #3f3f3f;
+          transition: opacity 0.2s ease-in-out;
+        }
+
+      }
+      ul {
+        position: absolute;
+        bottom: 6px;
+        left: 14px;
+        right: 14px;
+        display: block;
+        z-index: 10;
+        li {
+          margin: 0;
+          position: relative;
+          width: 33%;
+          max-width: 88px;
+          display: inline-block;
+          .symbol {
+            display: block;
+            position: relative;
+            height: 24px;
+            width: auto;
+            text-align: center;
+            a {
+              text-decoration: none;
+
+            }
+            .unlike:before {
+              color: $liked;
+            }
+            .like:before {
+              color: $default_picto;
+            }
+
+          }
+          .text {
+            display: block;
+            pointer-events: none;
+            top: 0;
+            text-align: center;
+            vertical-align: middle;
+            color: #78879f;
+            font-family: "Verala";
+            font-size: 11px;
+            margin: 5px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

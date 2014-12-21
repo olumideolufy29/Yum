@@ -1,0 +1,99 @@
+  <body class="home">
+
+    <header>
+      <div id="account">
+        <% if user_signed_in? %>
+        <%= current_user.first_name %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+        <%= f.email_field :email , :placeholder => "Adresse mail"%>
+        <%= f.password_field :password , :placeholder => "Mot de passe"%>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+        <%= f.submit 'Sign In' %>
+        <%= link_to('Register', new_user_registration_path)  %>
+        <%= link_to "Forgot your password?", new_password_path(:user) %>
+        <% end %>
+        <% end %>
+      </div>
+      <nav>
+        <h1>Yum</h1>
+        <ul id="tools">
+          <li>
+            <a id="login" href="#">
+              <% if user_signed_in? %>
+              <span><%= current_user.first_name %><span>
+                <%#  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              <% else %>
+                <span>Login</span>
+              <% end %>
+            </a>
+          </li>
+          <li><a class="icon-tags" href="#">Tags</a>
+          </li>
+          <li><a class="icon-search" href="#">Search</a>
+          </li>
+
+        </ul>
+        <div class="profile-popup  header-popup  bounceIn">
+          <input id="search" type="text" name="some_name" value="" autofocus>
+        </div>
+        <div class="tags-popup  header-popup  bounceIn">
+          <fieldset>
+            <button class="filter" data-filter=".entree">Entrées</button>
+            <button class="filter" data-filter=".plat">Plats</button>
+            <button class="filter" data-filter=".dessert">Desserts</button>
+          </fieldset>
+          <fieldset>
+            <button class="filter" data-filter=".vegetarien">Végétarien</button>
+            <button class="filter" data-filter=".chocolat">Chocolat</button>
+            <button class="filter" data-filter=".rapide">Rapide à faire</button>
+          </fieldset>
+        </div>
+        <div class="search-popup  header-popup  bounceIn">
+          <input id="search" type="text" name="some_name" value="" autofocus>
+        </div>
+      </nav>
+    </header>
+   <ol id="container_grille">
+    <% @recettes.each do |recette| %>
+    <li class="mix dessert <%= recette.id %>" data-tags="vanille cheesecake">
+      <div class="card small">
+        <div class="big-image">
+         <%= image_tag(recette.image.url()) %>
+      </div>
+        <div class="etiquette">
+            <h2><%= recette.nom %></h2>
+            <p><%= recette.baseline %></p>
+        </div>
+        <ul>
+            <li class="time">
+                <div class="symbol icon-time">
+                </div>
+                <div class="text">
+                    <p>45 min</p>
+                </div>
+            </li><!--
+         --><li class="favs">
+                <div class="symbol">
+                  <%= render 'shared/like_form', likeable: recette %>
+                </div>
+                <div class="text">
+                  <div class="likes"><%= recette.likers(User).count %></div>
+                </div>
+            </li><!--
+        --><li class="views">
+                <div class="symbol icon-views">
+                </div>
+                <div class="text">
+                    <p><%= recette.impression_count %></p>
+                </div>
+            </li>
+        </ul>
+      </div>
+    </li>
+    <% end %>
+    </section>
+    <%#<%= link_to 'New Recette', new_recette_path %>
+  </body>
