@@ -1,12 +1,75 @@
-<p id="notice"><%= notice %></p>
+<body class="recette">
+  <header>
+    <div id="account">
+      <form action="#">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Sign in">
+      </form>
+    </div>
+    <nav>
+      <a href="../index.html"> <h1>Yum</h1></a>
+      <a id="login" href="#">
+        <span>Sign in / Register</span>
+      </a>
+    </nav>
+  </header>
+  <section class="container">
+    <section class="infos">
+      <canvas width="200" height="200" id="background"></canvas>
+      <section>
+        <div class="personnes">
+          <button id="minor">-</button><!--
+          --><span>4</span><!--
+        --><button id="plus">+</button>
+        <p>personnes</p>
+      </div>
+      <h3>Ingrédients</h3>
+      <ul id="ingredients">
+        <li><span class="quantity">500<span class='unity'> g</span></span> de farine</li>
+        <li><span class="quantity">10<span class='unity'> g</span></span> de piment</li>
+        <li><span class="quantity">100<span class='unity'> ml</span></span> de crème</li>
+      </ul>
+      <h3>Avis</h3>
+      <div id="overflow-avis">
+        <ul class="liste-avis">
+          <li>
+            <img src="../img/avatar.png" alt="avatar" />
+            <h4>Un délice</h4>
+            <p>Très bon cheese. Nous nous sommes régalés... j'ai fait revenir un peu les oignons avant de les mettre dans la viande et mis une tranche de fromage en dessous et au dessus de la viande et mis 5 minutes au four "chapeau à côté" pour que le fromage
+              fonde bien. A la sortie du four oignons, salade, tomate et la délicieuse petite sauce. Merci !</p>
+            </li><!--
+            --><li>
+            <img src="../img/avatar.png" alt="avatar" />
+            <h4>Un délice</h4>
+            <p>Très bon cheese. Nous nous sommes régalés, on a mis la viande et une tranche de fromage par dessus, de la salade, tomate et la délicieuse petite sauce. Merci !</p>
+          </li><!--
+          --><li>
+          <img src="../img/avatar.png" alt="avatar" />
+          <h4>Un délice</h4>
+          <p>Très bon cheese, j'ai mis une tranche de fromage en dessous et au dessus de la viande fromage fonde bien. A la sortie du four oignons, salade, tomate et la délicieuse petite sauce. Merci !</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section class="infos">
+<section id="recette">
+  <h2>  <%= @recette.nom %> </h2>
+  <q>  <%= @recette.baseline %> </q>
+  <ol class="recette-steps">
+    <li><span class="number">1</span>Mélanger la mayonnaise, la moutarde, les cornichons et les câpres dans un bol. Garder au frais jusqu'à utilisation.</li>
+    <li><span class="number">2</span>Mélanger la chapelure et l’oeuf à la viande hachée.</li>
+    <li><span class="number">3</span>Ajouter l'oignon et mêler le tout. Assaisonner selon les goûts.</li>
+    <li><span class="number">4</span>Former 4 grands burgers (ils doivent être au moins aussi larges que le pain).</li>
+    <li><span class="number">5</span>Dans une grande poêle, faire chauffer de l'huile.</li>
+    <li><span class="number">6</span>Laisser cuire les burgers <span class="timer"><span class="time">1 min</span><span class="progress"></span></span> de chaque côté à feu moyen.
+    </li>
+  </ol>
+</section>
+</section>
+</body>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @recette.nom %>
-</p>
 
-<p>
-  <strong>Baseline:</strong>
-</p>
+
+
 <%= link_to 'Edit', edit_recette_path(@recette) %> |
-<%= link_to 'Back', recettes_path %>
