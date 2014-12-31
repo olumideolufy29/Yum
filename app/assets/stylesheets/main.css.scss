@@ -10,99 +10,112 @@
 
 a,
 h1 {
-    font-family: "Verala";
-}
+  font-family: "Verala";
 
+}
 .account {
-    transition: all 0.3s ease;
-    &.disable {
-        transform: translate3d(0, -210px, 0);
-        margin-bottom: -210px;
-    }
-    &.enable {
-        transform: translate3d(0, 0, 0);
-    }
-}
+  transition: all 0.3s ease;
+  &.disable {
+    transform: translate3d(0, -210px, 0);
+    margin-bottom: -210px;
+  }
+  &.enable {
+    transform: translate3d(0, 0, 0);
+  }
 
+}
 header {
+  background: #222d35;
+  #account {
+    margin: auto;
+    max-width: 620px;
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     background: #222d35;
-    #account {
-        margin: auto;
-        max-width: 620px;
-        padding: 0 20px;
+    height: 210px;
+    transition: all 0.3s ease;
+    display: block;
+    form {
+      height: 210px;
+      width: 280px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 20px 0 0;
+      margin: 0;
+      label {
+        color: #fff;
+        font-family: Verala;
+      }
+      a {
+        background: #fff;
+        padding: 10px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: #000;
+        display: inline-block;
+      }
+      input {
+        position: relative;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        background: #222d35;
-        height: 210px;
-        transition: all 0.3s ease;
-        display: block;
-        form {
-            height: 210px;
-            width: 280px;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 20px 0 0;
-            margin: 0;
-            input {
-                position: relative;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                width: 278px;
-                margin: 0 16px 10px 0;
-            }
-            input[type="submit"] {
-                width: 100px;
-            }
-        }
+        width: 278px;
+        margin: 0 16px 10px 0;
+      }
+      input[type="submit"] {
+        width: 100px;
+      }
     }
-    nav {
-        background: #324351;
-        height: 75px;
-        text-align: right;
-        line-height: 75px;
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
-        h1 {
-            float: left;
-            -webkit-transform: translateZ(0);
-        }
-    }
-}
 
+  }
+  nav {
+    background: #324351;
+    height: 75px;
+    text-align: right;
+    line-height: 75px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    h1 {
+      float: left;
+      -webkit-transform: translateZ(0);
+    }
+  }
+
+}
 input[type="email"],
 input[type="password"],
 textarea {
-    padding: 10px 15px;
-    margin-bottom: 0;
-    background: #fff;
-    border: 0;
-    border-radius: 30px;
-    transition: all 200ms ease;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Verala";
-    font-size: 16px;
-    outline: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+  padding: 10px 15px;
+  margin-bottom: 0;
+  background: #fff;
+  border: 0;
+  border-radius: 30px;
+  transition: all 200ms ease;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Verala";
+  font-size: 16px;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+}
 input[type="submit"] {
-    -webkit-appearance: none;
-    border: 0;
-    outline: 0;
-    padding: 10px 15px;
-    margin-bottom: 0;
-    background-color: #fff;
-    border: 1px solid #dbdfe5;
-    border-radius: 30px;
-    font-family: "Verala";
-    font-size: 16px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    background: #fff none;
-    cursor: pointer;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  margin-bottom: 0;
+  background-color: #fff;
+  border: 1px solid #dbdfe5;
+  border-radius: 30px;
+  font-family: "Verala";
+  font-size: 16px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: #fff none;
+  cursor: pointer;
 }

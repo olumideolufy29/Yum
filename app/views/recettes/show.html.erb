@@ -1,4 +1,4 @@
-<body class="recette">
+<body class="recette account disable">
   <header>
     <div id="account">
       <form action="#">
@@ -8,15 +8,14 @@
       </form>
     </div>
     <nav>
-      <a href="../index.html"> <h1>Yum</h1></a>
+      <h1><%= link_to("Yum", root_path)%></h1>
       <a id="login" href="#">
         <span>Sign in / Register</span>
       </a>
     </nav>
   </header>
   <section class="container">
-    <section class="infos">
-      <canvas width="200" height="200" id="background"></canvas>
+    <section class="infos" style="background-image: url(<%= @recette.image.url(:blurry) %>)";>
       <section>
         <div class="personnes">
           <button id="minor">-</button><!--
@@ -72,4 +71,4 @@
 
 
 
-<%= link_to 'Edit', edit_recette_path(@recette) %> |
+<%# link_to 'Edit', edit_recette_path(@recette) %>

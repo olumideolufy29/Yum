@@ -1,5 +1,5 @@
 /* #1- Large desktop */
-@media (min-width: 1200px) {
+@media (min-width: 1400) {
   .home ol#container_grille {
     li {
       width: 20%;
@@ -8,7 +8,7 @@
 
 }
 /* #2- Regular sized laptops */
-@media (min-width: 980px) and (max-width: 1199px) {
+@media (min-width: 980px) and (max-width: 1399px) {
   .home ol#container_grille {
     li {
       width: 25%;

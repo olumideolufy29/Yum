@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_self
 //= require_directory .
 jQuery(document).ready(function() {
@@ -39,8 +39,6 @@ jQuery(document).ready(function() {
   }
 
   /*-------  Login ------- */
-  $('header').parent().addClass('account disable');
-
   $("#login").click(function() {
     $('header').parent().toggleClass('disable').toggleClass('enable');
   });
@@ -171,22 +169,6 @@ jQuery(document).ready(function() {
       "animation": "bulle .5s cubic-bezier(0.19, 1, 0.22, 1.03) 1.3s 1 forwards"
     });
 
-
-    var canvas = document.getElementById("background");
-    var canvasContext = canvas.getContext("2d");
-    var canvasBackground = new Image();
-    canvasBackground.src = "../img/burger.png";
-
-    var drawBlur = function() {
-      var w = canvas.width;
-      var h = canvas.height;
-      canvasContext.drawImage(canvasBackground, 0, 0, w, h);
-      stackBlurCanvasRGBA("background", 0, 0, w, h, 10);
-    }
-
-    canvasBackground.onload = function() {
-      drawBlur();
-    }
     $('.timer').click(function() {
 
       var $countdown = $(".time");
@@ -453,3 +435,5 @@ jQuery(document).ready(function() {
 
 
 });
+
+//= require turbolinks

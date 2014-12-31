@@ -1,18 +1,24 @@
-  <body class="home">
+  <body class="home account disable">
 
     <header>
       <div id="account">
         <% if user_signed_in? %>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
         <% else %>
-        <%= form_for(:user, :url => session_path(:user)) do |f| %>
-        <%= f.email_field :email , :placeholder => "Adresse mail"%>
-        <%= f.password_field :password , :placeholder => "Mot de passe"%>
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-        <%= f.submit 'Sign In' %>
-        <%= link_to('Register', new_user_registration_path)  %>
-        <%= link_to "Forgot your password?", new_password_path(:user) %>
+        <div class="login">
+          <%= form_for(:user, :url => session_path(:user)) do |f| %>
+          <%= f.email_field :email , :placeholder => "Adresse mail"%>
+          <%= f.password_field :password , :placeholder => "Mot de passe"%>
+          <div class="remember">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <%= f.submit 'Sign In' %>
+          <%= link_to "Forgot your password?", new_password_path(:user) %>
+      </div>
+        <div class="register">
+          <%= link_to('Register', new_user_registration_path)  %>
+        </div>
         <% end %>
         <% end %>
       </div>
@@ -23,7 +29,6 @@
             <a id="login" href="#">
               <% if user_signed_in? %>
               <span><%= current_user.first_name %><span>
-                <%#  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
               <% else %>
                 <span>Login</span>
               <% end %>
@@ -58,43 +63,56 @@
    <ol id="container_grille">
     <% @recettes.each do |recette| %>
     <li class="mix dessert <%= recette.id %>" data-tags="vanille cheesecake">
-      <%= link_to(recette) do %>
-      <div class="card small">
-        <div class="big-image">
-         <%= image_tag(recette.image.url()) %>
-      </div>
-        <div class="etiquette">
-            <h2><%= recette.nom %></h2>
-            <p><%= recette.baseline %></p>
+      <div class="container">
+        <div class="card small">
+          <%= link_to(recette) do %>
+          <div class="big-image">
+           <%= image_tag(recette.image.url()) %>
         </div>
-        <ul>
-            <li class="time">
-                <div class="symbol icon-time">
-                </div>
-                <div class="text">
-                    <p>45 min</p>
-                </div>
-            </li><!--
-         --><li class="favs">
-                <div class="symbol">
-                  <%= render 'shared/like_form', likeable: recette %>
-                </div>
-                <div class="text">
-                  <div class="likes"><%= recette.likers(User).count %></div>
-                </div>
-            </li><!--
-        --><li class="views">
-                <div class="symbol icon-views">
-                </div>
-                <div class="text">
-                    <p><%= recette.impression_count %></p>
-                </div>
-            </li>
-        </ul>
+        <% end %>
+
+          <div class="etiquette">
+            <%= link_to(recette) do %>
+              <h2><%= recette.nom %></h2>
+              <% end %>
+              <p><%= recette.baseline %></p>
+          </div>
+          <ul>
+              <li class="time">
+                  <div class="symbol icon-time">
+                  </div>
+                  <div class="text">
+                      <p>45 min</p>
+                  </div>
+              </li><!--
+           --><li class="favs">
+                  <div class="symbol">
+                    <%= render 'shared/like_form', likeable: recette %>
+                  </div>
+                  <div class="text">
+                    <div class="likes"><%= recette.likers(User).count %></div>
+                  </div>
+              </li><!--
+          --><li class="views">
+                  <div class="symbol icon-views">
+                  </div>
+                  <div class="text">
+                      <p><%= recette.impression_count %></p>
+                  </div>
+              </li>
+          </ul>
+        </div>
       </div>
-      <% end %>
     </li>
     <% end %>
     </section>
-    <%#<%= link_to 'New Recette', new_recette_path %>
+    <%# link_to 'New Recette', new_recette_path %>
   </body>
+  <script charset="utf-8">
+  (function(d){
+    var s = d.style;
+    if(!(('flexWrap' in s) || ('WebkitFlexWrap' in s) || ('MozFlexWrap' in s) || ('msFlexWrap' in s))) {
+      d.className = 'no-flexwrap';
+    }
+  })(document.documentElement);
+  </script>

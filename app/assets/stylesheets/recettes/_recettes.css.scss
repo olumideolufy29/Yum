@@ -39,26 +39,29 @@
         width: 300px;
         height: auto;
         text-align: center;
-        .filter {
-          display: inline-block;
-          margin: 5px;
-          padding: 4px 9px 5px;
-          cursor: pointer;
-          color: #5f656b;
-          border: 2px solid #7a7f85;
-          border-radius: 90px;
-          background-color: rgba(255, 255, 255, 0);
-          text-shadow: none;
-          font-family: "Verala";
-          font-size: 16px;
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-          &:focus {
-            outline: 0;
-          }
-          &.active {
-            color: $blanc;
-            border: 2px solid $bordure-filtres;
-            background: $bordure-filtres;
+        fieldset {
+          line-height: 100%;
+          .filter {
+            display: inline-block;
+            margin: 5px;
+            padding: 4px 9px 5px;
+            cursor: pointer;
+            color: #5f656b;
+            border: 2px solid #7a7f85;
+            border-radius: 90px;
+            background-color: rgba(255, 255, 255, 0);
+            text-shadow: none;
+            font-family: "Verala";
+            font-size: 16px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            &:focus {
+              outline: 0;
+            }
+            &.active {
+              color: $blanc;
+              border: 2px solid $bordure-filtres;
+              background: $bordure-filtres;
+            }
           }
         }
 
@@ -130,126 +133,131 @@
     width: 20%;
     height: auto;
     list-style: none;
-    .card {
-      transform-origin: 50% 0;
-      transform: translate3d(0, 0, 0);
+    > .container {
+      display: block;
       border-radius: 5px;
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      text-align: center;
-      background-color: #fff;
-      height: auto;
-      z-index: 3;
-      &.big {
-        height: 400px;
-      }
-      &.small {
-        height: 300px;
-      }
-      .no-touch & {
-        &:hover {
-          .big-image {
-            img {
-              transform: translate3d(-50%, -30px, 0);
+      .card {
+        transform-origin: 50% 0;
+        transform: translate3d(0, 0, 0);
+        border-radius: 5px;
+        -webkit-mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC");
+        overflow: hidden;
+        text-align: center;
+        background-color: #fff;
+        height: auto;
+        z-index: 3;
+        &.big {
+          height: 400px;
+        }
+        &.small {
+          height: 300px;
+        }
+        .no-touch & {
+          &:hover {
+            .big-image {
+              img {
+                transform: translate3d(-50%, -30px, 0);
+                transition: transform 0.3s ease;
+              }
+
+            }
+            .etiquette {
+              transform: translate3d(0, -50%, 0);
               transition: transform 0.3s ease;
+              & > p {
+                opacity: 1;
+                transition: opacity 0.3s ease;
+              }
             }
+          }
 
-          }
-          .etiquette {
-            transform: translate3d(0, -50%, 0);
-            transition: transform 0.3s ease;
-            & > p {
-              opacity: 1;
-              transition: opacity 0.3s ease;
-            }
-          }
         }
+        .big-image {
+          -webkit-backface-visibility: hidden;
+          img {
+            min-height: calc(100% - 104px);
+            max-width: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.57999, 1);
+            -webkit-backface-visibility: hidden;
+          }
 
-      }
-      .big-image {
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-        img {
-          min-height: calc(100% - 104px);
-          max-width: 100%;
+        }
+        .etiquette {
           position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          transition: all 0.4s cubic-bezier(0.42, 0, 0.57999, 1);
-        }
-
-      }
-      .etiquette {
-        position: absolute;
-        bottom: 0;
-        display: block;
-        width: 100%;
-        height: 104px;
-        background-color: $blanc;
-        transition: all 0.4s cubic-bezier(0.42, 0, 0.57999, 1);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        h2 {
+          bottom: 0;
+          display: block;
           width: 100%;
-          display: inline-block;
-          text-decoration: none;
-          color: #3f3f3f;
-          font-family: "Verala";
-          font-size: 24px;
-          padding: 15px 0;
-        }
-        & > p {
-          opacity: 0;
-          font-size: 14px;
-          font-family: "Verala";
-          text-align: justify;
-          padding: 0 15px;
-          color: #3f3f3f;
-          transition: opacity 0.2s ease-in-out;
-        }
-
-      }
-      ul {
-        position: absolute;
-        bottom: 6px;
-        left: 14px;
-        right: 14px;
-        display: block;
-        z-index: 10;
-        li {
-          margin: 0;
-          position: relative;
-          width: 33%;
-          max-width: 88px;
-          display: inline-block;
-          .symbol {
-            display: block;
-            position: relative;
-            height: 24px;
-            width: auto;
-            text-align: center;
-            a {
-              text-decoration: none;
-
-            }
-            .unlike:before {
-              color: $liked;
-            }
-            .like:before {
-              color: $default_picto;
-            }
-
-          }
-          .text {
-            display: block;
-            pointer-events: none;
-            top: 0;
-            text-align: center;
-            vertical-align: middle;
-            color: #78879f;
+          height: 104px;
+          background-color: $blanc;
+          transition: all 0.4s cubic-bezier(0.42, 0, 0.57999, 1);
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          h2 {
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+            color: #3f3f3f;
             font-family: "Verala";
-            font-size: 11px;
-            margin: 5px 0 0;
+            font-size: 20px;
+            padding: 15px 0;
+          }
+          & > p {
+            opacity: 0;
+            font-size: 14px;
+            font-family: "Verala";
+            text-align: justify;
+            padding: 0 15px;
+            color: #3f3f3f;
+            transition: opacity 0.2s ease-in-out;
+          }
+
+        }
+        ul {
+          position: absolute;
+          bottom: 6px;
+          left: 14px;
+          right: 14px;
+          display: block;
+          z-index: 10;
+          li {
+            margin: 0;
+            position: relative;
+            width: 33%;
+            max-width: 88px;
+            display: inline-block;
+            .symbol {
+              display: block;
+              position: relative;
+              height: 24px;
+              width: auto;
+              text-align: center;
+              a {
+                text-decoration: none;
+
+              }
+              .unlike:before {
+                color: $liked;
+              }
+              .like:before {
+                color: $default_picto;
+              }
+
+            }
+            .text {
+              display: block;
+              pointer-events: none;
+              top: 0;
+              text-align: center;
+              vertical-align: middle;
+              color: #78879f;
+              font-family: "Verala";
+              font-size: 11px;
+              margin: 5px 0 0;
+            }
           }
         }
       }
@@ -266,15 +274,10 @@
       z-index: 1000;
       overflow: hidden;
       flex: 1;
-      canvas {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #4c4c4c;
-        background-size: cover;
+      background-size: cover;
+      background-position: center center;
+      section {
+        padding-top: 50px;
       }
       section {
         & > * {
@@ -403,7 +406,6 @@
               -moz-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
               box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
               text-shadow: none;
-              font-family: "Gotham Book";
               font-size: 18px;
               img {
                 width: 54px;
@@ -445,13 +447,11 @@
         display: block;
         margin: 0 0 70px 70px;
         color: #888;
-        font-family: "Gotham Light Italic";
         font-size: 18px;
       }
       .recette-steps {
         margin-left: 70px;
         counter-reset: section;
-        font-family: "Gotham Book", arial;
         li {
           position: relative;
           margin: 0 30px 50px 65px;
