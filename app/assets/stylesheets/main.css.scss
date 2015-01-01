@@ -36,7 +36,10 @@ header {
     background: #222d35;
     height: 210px;
     transition: all 0.3s ease;
-    display: block;
+    display: table;
+    div {
+      display: table-cell;
+    }
     form {
       height: 210px;
       width: 280px;
@@ -50,12 +53,9 @@ header {
         font-family: Verala;
       }
       a {
-        background: #fff;
-        padding: 10px;
-        border-radius: 50px;
+        color: #fff;
         text-decoration: none;
-        color: #000;
-        display: inline-block;
+        font-size: 0.8em;
       }
       input {
         position: relative;
@@ -67,6 +67,11 @@ header {
       }
       input[type="submit"] {
         width: 100px;
+      }
+      .remember {
+        input {
+          width: auto;
+        }
       }
     }
 

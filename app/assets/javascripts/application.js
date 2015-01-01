@@ -418,7 +418,7 @@ jQuery(document).ready(function() {
           $this = $("this");
 
           // add item to be filtered out if search text matches items inside the title
-          if ($(this).data("tags") && $(this).data("tags").match(inputText)) {
+          if (($(this).data("tags") && $(this).data("tags").match(inputText)) || $(this).children('h2').html().match(inputText)) {
             $matching = $matching.add(this);
           } else {
             // removes any previously matched item
