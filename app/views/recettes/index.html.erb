@@ -62,18 +62,18 @@
     </header>
    <ol id="container_grille">
     <% @recettes.each do |recette| %>
-    <li class="mix dessert <%= recette.id %>" data-tags="vanille cheesecake">
+    <li class="mix dessert <%= recette.id %>" data-tags="vanille cheesecake" itemscope itemtype="http://schema.org/Recipe" >
       <div class="container">
         <div class="card small">
           <%= link_to(recette) do %>
           <div class="big-image">
-           <%= image_tag(recette.image.url()) %>
+           <%= image_tag(recette.image.url(), itemprop:'image') %>
         </div>
         <% end %>
 
           <div class="etiquette">
             <%= link_to(recette) do %>
-              <h2><%= recette.nom %></h2>
+              <h2 itemprop="name" ><%= recette.nom %></h2>
               <% end %>
               <p><%= recette.baseline %></p>
           </div>
@@ -82,7 +82,7 @@
                   <div class="symbol icon-time">
                   </div>
                   <div class="text">
-                      <p>45 min</p>
+                      <time itemprop="totalTime" content="PT45M">45 min</time>
                   </div>
               </li><!--
            --><li class="favs">

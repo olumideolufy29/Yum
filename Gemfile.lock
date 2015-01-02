@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: e3cb3488a6d45bfbde1a1baeee4c50bf9221089a
+  revision: f18f05f01f138930367e3d35a314de7562e90328
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -182,7 +182,7 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.6.0)
+    uglifier (2.6.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
