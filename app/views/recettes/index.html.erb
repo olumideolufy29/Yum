@@ -75,7 +75,7 @@
             <%= link_to(recette) do %>
               <h2 itemprop="name" ><%= recette.nom %></h2>
               <% end %>
-              <p><%= recette.baseline %></p>
+              <p itemprop="summary"><%= recette.baseline %></p>
           </div>
           <ul>
               <li class="time">
