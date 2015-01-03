@@ -8,8 +8,8 @@ class Recette < ActiveRecord::Base
     impressions.size
   end
 
-  has_attached_file :image, :styles => { :blurry => ["800x800>", :jpg]},
-     :convert_options => { :blurry => "-blur 0x12 -quality 100 -strip" },
+  has_attached_file :image, :styles => { :blurry => ["800x800>", :jpg], :thumb => ["400x300>", :jpg]},
+     :convert_options => { :blurry => "-blur 0x12 -quality 100 -strip", :thumb => "-gravity center -extent 400x300" },
      :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 

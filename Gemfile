@@ -7,6 +7,7 @@ gem 'paperclip'
 gem 'autoprefixer-rails'
 gem 'impressionist'
 gem 'jquery-turbolinks'
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

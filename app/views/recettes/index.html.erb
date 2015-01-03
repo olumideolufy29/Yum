@@ -67,7 +67,7 @@
         <div class="card small">
           <%= link_to(recette) do %>
           <div class="big-image">
-           <%= image_tag(recette.image.url(), itemprop:'image') %>
+           <%= image_tag(recette.image.url(:thumb), itemprop:'image') %>
         </div>
         <% end %>
 
@@ -82,7 +82,7 @@
                   <div class="symbol icon-time">
                   </div>
                   <div class="text">
-                      <time itemprop="totalTime" content="PT45M">45 min</time>
+                    <%= content_tag(:p, distance_of_time_in_words(recette.prep_time), itemprop:'totalTime', datetime:'Time.at(total_seconds).utc.strftime("%H:%M")')%>
                   </div>
               </li><!--
            --><li class="favs">
