@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require html5shiv/dist/html5shiv
+//= require fastclick/lib/fastclick
+//= require mixitup2/build/jquery.mixitup.min
+//= jquery-timer/jquery.timer
 //= require_self
 //= require_directory .
 jQuery(document).ready(function() {

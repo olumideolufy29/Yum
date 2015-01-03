@@ -23,3 +23,5 @@ config/database.yml
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
 .rvmrc
+
+*.codekit

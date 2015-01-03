@@ -23,5 +23,6 @@ module Yum
     config.assets.initialize_on_precompile = false
     config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
   end
 end
