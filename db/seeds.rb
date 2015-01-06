@@ -8,7 +8,7 @@
 
 require 'faker'
 NB_USERS = 40
-NB_RECETTES = 40
+NB_RECETTES = 30
 
 User.create!([
   {
@@ -37,7 +37,8 @@ NB_RECETTES.times do |n|
     baseline: Faker::Lorem.sentence(5, false, 6),
     prep_time: Faker::Number.number(4),
     cooking_time: Faker::Number.number(5),
-    image: Faker::Avatar.image
+    image: Faker::Avatar.image,
+    category: [:dessert, :entree, :plat].sample
     })
     print "\rCreating recette... #{n+1}"
   end

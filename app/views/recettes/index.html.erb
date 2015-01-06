@@ -62,7 +62,7 @@
     </header>
    <ol id="container_grille">
     <% @recettes.each do |recette| %>
-    <li class="mix dessert <%= recette.id %>" data-tags="vanille cheesecake" itemscope itemtype="http://schema.org/Recipe" >
+    <li class="mix <%= recette.category %> <%= recette.id %>" data-tags="vanille cheesecake" itemscope itemtype="http://schema.org/Recipe" >
       <div class="container">
         <div class="card small">
           <%= link_to(recette) do %>
