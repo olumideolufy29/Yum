@@ -74,6 +74,7 @@ GEM
     bourbon (4.1.0)
       sass (~> 3.3)
       thor
+    browser (0.8.0)
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -225,6 +226,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   autoprefixer-rails
+  browser
   coffee-rails (~> 4.1.0)
   devise
   faker

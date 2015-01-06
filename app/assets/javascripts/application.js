@@ -17,7 +17,6 @@
 //= require fastclick/lib/fastclick
 //= require mixitup2/build/jquery.mixitup.min
 //= require jquery-timer/jquery.timer
-//= require modernizr/modernizr
 //= require_self
 //= require_directory .
 jQuery(document).ready(function() {
