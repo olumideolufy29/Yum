@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="<%= browser.to_s %><% if browser.mobile? %> touch<% else %> no-touch<% end %>">
+<html class="<%= browser.to_s %><% if browser.mobile? or browser.tablet? %> touch<% else %> no-touch<% end %>">
 
 <head>
   <title>Yum</title>
