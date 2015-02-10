@@ -211,7 +211,7 @@
           & > p {
             opacity: 0;
             font-size: 14px;
-            font-family: "Verala";
+            font-family: "Source Sans Pro Regular";
             text-align: justify;
             padding: 0 15px;
             color: #3f3f3f;
@@ -427,6 +427,7 @@
                 padding: 0 22px 14px;
                 text-align: justify;
                 font-size: 0.8em;
+                font-family: "Source Sans Pro Regular";
               }
               &:nth-child(2n) {
                 margin-left: auto;
@@ -460,6 +461,7 @@
           margin: 0 30px 50px 65px;
           line-height: 23px;
           transition: opacity 0.2s ease;
+          font-family: "Source Sans Pro Regular";
           &.done {
             opacity: 0.3;
             .number {
@@ -469,19 +471,28 @@
           }
           .number {
             position: absolute;
-            top: -8px;
-            left: -65px;
+            top: -13px;
+            left: -70px;
             display: inline-block;
-            width: 35px;
-            height: 35px;
+            width: 45px;
+            height: 45px;
             text-align: center;
             color: $blanc;
             border-radius: 35px;
             background: $etapes-recette;
-            font-family: "Avenir Book";
+            font-family: "Source Sans Pro Regular";
             font-size: 20px;
-            line-height: 38px;
+            line-height: 45px;
             cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.42, 0, 0.13, 1.8);
+            &:active {
+              top: -10px;
+              left: -67px;
+              width: 39px;
+              height: 39px;
+              line-height: 39px;
+            }
+
           }
           .timer {
             position: relative;
