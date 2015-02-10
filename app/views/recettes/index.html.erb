@@ -26,13 +26,11 @@
         <h1>Yum</h1>
         <ul id="tools">
           <li>
-            <a id="login" href="#">
               <% if user_signed_in? %>
-              <span><%= current_user.first_name %><span>
+              <a id="profile" href="#"><span><%= current_user.first_name %><span></a>
               <% else %>
-                <span>Login</span>
+              <a id="login" href="#"><span>Login</span>  </a>
               <% end %>
-            </a>
           </li>
           <li><a class="icon-tags" href="#">Tags</a>
           </li>

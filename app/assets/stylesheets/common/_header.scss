@@ -1,0 +1,178 @@
+header {
+  background: $header;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  text-align: right;
+  #account {
+    margin: auto;
+    max-width: 620px;
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #222d35;
+    height: 210px;
+    transition: all 0.3s ease;
+    display: table;
+    div {
+      display: table-cell;
+    }
+    form {
+      height: 210px;
+      width: 280px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 20px 0 0;
+      margin: 0;
+      label {
+        color: #fff;
+        font-family: Verala;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.8em;
+      }
+      input {
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 278px;
+        margin: 0 16px 10px 0;
+      }
+      input[type="submit"] {
+        width: 100px;
+      }
+      .remember {
+        input {
+          width: auto;
+        }
+      }
+    }
+  }
+  h1 {
+    float: left;
+    color: $blanc;
+    line-height: 75px;
+  }
+  #tools {
+    height: 75px;
+    margin-right: 30px;
+    vertical-align: top;
+    li {
+      margin-left: 15px;
+      display: inline-block;
+      vertical-align: top;
+      a {
+        display: block;
+        overflow: hidden;
+        width: 30px;
+        height: 75px;
+        white-space: nowrap;
+        text-indent: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        &#login,
+        &#profile {
+          text-indent: 0;
+          display: inline-block;
+          width: auto;
+          -webkit-transform: translateZ(0);
+        }
+        &.icon-search {
+          background: url("search.svg") 50% 50% no-repeat;
+          background-size: 30px 30px;
+        }
+        &.icon-tags {
+          background: url("tags.svg") 50% 50% no-repeat;
+          background-size: 30px 30px;
+        }
+      }
+    }
+  }
+  .header-popup {
+    position: fixed;
+    z-index: 8;
+    display: none;
+    width: 160px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.75) 100%);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    &.search-popup {
+      right: 10px;
+      min-width: 136px;
+      height: 22px;
+      padding: 18px;
+      transition: width 0.3s;
+      #search {
+        min-width: 50px;
+        color: $font-body;
+        border: 0;
+        outline: 0;
+        background: none;
+        font-family: "Verala";
+        font-size: 18px;
+        display: block;
+      }
+    }
+    &.tags-popup {
+      right: 60px;
+      width: 300px;
+      height: auto;
+      text-align: center;
+      fieldset {
+        line-height: 100%;
+        .filter {
+          display: inline-block;
+          margin: 5px;
+          padding: 4px 9px 5px;
+          cursor: pointer;
+          color: #5f656b;
+          border: 2px solid #7a7f85;
+          border-radius: 90px;
+          background-color: rgba(255, 255, 255, 0);
+          text-shadow: none;
+          font-family: "Verala";
+          font-size: 16px;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          &:focus {
+            outline: 0;
+          }
+          &.active {
+            color: $blanc;
+            border: 2px solid $bordure-filtres;
+            background: $bordure-filtres;
+          }
+        }
+      }
+    }
+    &:after {
+      position: absolute;
+      top: -19px;
+      right: 10px;
+      display: block;
+      width: 42px;
+      height: 19px;
+      content: "";
+      background: url("triangle-popup.svg") 0 0 no-repeat;
+      background-size: 42px 19px;
+    }
+  }
+  nav {
+    background: #324351;
+    height: 75px;
+    text-align: right;
+    line-height: 75px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    h1 {
+      float: left;
+      -webkit-transform: translateZ(0);
+    }
+  }
+}
