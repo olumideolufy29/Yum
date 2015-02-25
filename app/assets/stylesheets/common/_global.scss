@@ -56,3 +56,7 @@ fieldset {
 body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
+header+ol,
+header+section {
+  padding-top: 285px;
+}
